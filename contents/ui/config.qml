@@ -34,6 +34,7 @@ ColumnLayout {
                   id: folderListDelegate
                   ItemDelegate {
                       text: fileBaseName.replace(/^Shader_/,"").replace(/_/g," ")
+                      width: parent.width
                    }
               }
 
