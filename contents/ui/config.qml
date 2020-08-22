@@ -33,12 +33,12 @@ ColumnLayout {
               delegate: Component {
                   id: folderListDelegate
                   ItemDelegate {
-                      text: fileBaseName.replace("_"," ")
+                      text: fileBaseName.replace(/_/g," ")
                    }
               }
 
               textRole: "fileBaseName"
-              displayText: currentText.replace("_"," ")
+              displayText: currentText.replace(/_/g," ")
 
               onCurrentTextChanged: {
                   selectedShaderField.text = "./Shader/" + model.get(currentIndex, "fileName")
@@ -157,7 +157,7 @@ ColumnLayout {
       }
     Item {
         id: demoShader
-        width: 200
+        width: 356 
         height: 200
         anchors { horizontalCenter: parent.horizontalCenter }
 
