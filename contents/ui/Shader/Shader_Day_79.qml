@@ -1,7 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
 Item {
-    property Image iChannel0: Image { source: "./Shader_Day_79_iChannel0.png" }
+    property Image iChannel0: Image { source: "./Shadertoy_RGBA_Noise_Medium.png" }
     property string pixelShader: `
 
 // https://www.shadertoy.com/view/tlySDV

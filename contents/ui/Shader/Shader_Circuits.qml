@@ -1,7 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
 Item {
-	property Image iChannel1: Image { source: "./Shader_Circuits_iChannel1.jpg" }
+	property Image iChannel1: Image { source: "./Shadertoy_Abstract_1.jpg" }
     property string pixelShader: `
 
 // https://www.shadertoy.com/view/XlX3Rj
