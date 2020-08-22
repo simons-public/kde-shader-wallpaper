@@ -3,6 +3,10 @@ import QtQuick.Controls 2.12
 Item {
     property Image iChannel0: Image { source: "./Shadertoy_Pebbles.png" }
     property string pixelShader: `
+
+// https://www.shadertoy.com/view/MdsBz2
+// Credits to knarkowicz
+
 const float MATH_PI = float( 3.14159265359 );
 
 float saturate( float x )
