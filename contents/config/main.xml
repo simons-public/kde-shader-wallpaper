@@ -6,7 +6,7 @@
   <kcfgfile name=""/>
 
   <group name="General">
-    <entry name="SelectedShader" type="String">
+    <entry name="selectedShader" type="String">
       <label>SelectedShader</label>
       <default>./Shader/Shader_Waves</default>
     </entry>

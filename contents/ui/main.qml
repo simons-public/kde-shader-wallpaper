@@ -28,7 +28,7 @@ import "./Comp"
 Item {
     Loader {
         id: toyLoader
-        source: wallpaper.configuration.SelectedShader
+        source: wallpaper.configuration.selectedShader
         anchors.fill: parent
         onLoaded: {
             toy.pixelShader = item.pixelShader

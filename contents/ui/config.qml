@@ -2,6 +2,7 @@ import QtQuick 2.12
 import QtQuick.Layouts 1
 import QtQuick.Controls 2.12
 import Qt.labs.folderlistmodel 2
+import "./Comp"
 
 ColumnLayout {
 
@@ -43,6 +44,8 @@ ColumnLayout {
                   selectedShaderField.text = "./Shader/" + model.get(currentIndex, "fileName")
                   // console.debug(JSON.stringify(main.Loader))
                   // main.toyLoader.source = model.get(currentIndex).path
+                  demoShader.children[0].source = model.get(currentIndex, "filePath")
+                  demoShader.children[1].restart()
               }
           }
 
@@ -152,6 +155,39 @@ ColumnLayout {
               text: "Some high quality wallpapers have poor performance on high resolution (2k+)\nor depending on your GPU.\n\nIn case of emergency, delete folder in\n\"~/.local/share/plasma/wallpaper/online.knowmad.shaderwallpaper\",\nthen run: \"pkill plasmashell && plasmashell &\" to relaunch it.\n\nUse with caution."
           }
       }
+    Item {
+        id: demoShader
+        width: 200
+        height: 200
+        anchors { horizontalCenter: parent.horizontalCenter }
+
+        Loader {
+        id: toyLoader
+        source: wallpaper.configuration.selectedShader
+        anchors.fill: parent
+        onLoaded: {
+            toy.pixelShader = item.pixelShader
+            if (item.iChannel0) {
+                toy.iChannel0 = item.iChannel0
+            }
+            if (item.iChannel1) {
+                toy.iChannel1 = item.iChannel1
+            }
+            if (item.iChannel2) {
+                toy.iChannel2 = item.iChannel2
+            }
+            if (item.iChannel3) {
+                toy.iChannel3 = item.iChannel3
+            }
+            toy.restart()
+        }
+        }
+        TShaderToy {
+            id: toy
+            anchors.fill: parent
+            running: false
+        }
+    }
 
       Item {
           Layout.fillHeight: true
