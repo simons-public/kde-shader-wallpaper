@@ -33,12 +33,12 @@ ColumnLayout {
               delegate: Component {
                   id: folderListDelegate
                   ItemDelegate {
-                      text: fileBaseName.replace(/_/g," ")
+                      text: fileBaseName.replace(/^Shader_/,"").replace(/_/g," ")
                    }
               }
 
               textRole: "fileBaseName"
-              displayText: currentText.replace(/_/g," ")
+              displayText: currentText.replace(/^Shader_/,"").replace(/_/g," ")
 
               onCurrentTextChanged: {
                   selectedShaderField.text = "./Shader/" + model.get(currentIndex, "fileName")
