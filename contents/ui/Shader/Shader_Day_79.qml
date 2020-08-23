@@ -5,6 +5,7 @@ Item {
     property string pixelShader: `
 
 // https://www.shadertoy.com/view/tlySDV
+// Credit to jeyko
 
 #define pmod(p,x) (mod(p,x) - 0.5*x)
 #define dmin(a,b) a.x < b.x ? a : b
